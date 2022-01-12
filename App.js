@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import { StyleSheet, Button, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Button, View, Text, Image, Alert } from 'react-native';
 
 export default class App extends Component {
   constructor(){
@@ -12,13 +12,13 @@ export default class App extends Component {
   battle(random, me){
     switch((random+4) - me) {
       case 2: case -1:
-        alert('You Lose');
+        Alert.alert('Result','You Lose');
         break;
       case 0:
-        alert('You Draw');
+        Alert.alert('Result','You Draw');
         break;
       case -2: case 1:
-        alert('You Win');
+        Alert.alert('Result','You Win');
         break;
     }
     this.setState({
